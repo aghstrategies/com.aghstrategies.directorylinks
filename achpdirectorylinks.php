@@ -3,6 +3,21 @@
 require_once 'achpdirectorylinks.civix.php';
 
 /**
+ * Implements hook_civicrm_buildForm().
+ *
+ * Set a default value for an event price set field.
+ *
+ */
+function achpdirectorylinks_civicrm_buildForm($formName, &$form) {
+  //print ($formName);
+  //die();
+
+  if ($formName == 'CRM_Profile_Form_Search') {
+    CRM_Core_Resources::singleton()->addScriptFile('com.aghstrategies.achpdirectorylinks', 'js/directorylinks.js');
+  }
+}
+
+/**
  * Implements hook_civicrm_config().
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_config
