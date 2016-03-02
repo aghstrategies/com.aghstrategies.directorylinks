@@ -17,6 +17,10 @@ function achpdirectorylinks_civicrm_buildForm($formName, &$form) {
   }
 }
 
+function achpdirectorylinks_civicrm_pageRun(&$page) {
+  CRM_Core_Resources::singleton()->addScriptFile('com.aghstrategies.achpdirectorylinks', 'js/directorylinks.js');
+}
+
 /**
  * Implements hook_civicrm_config().
  *
