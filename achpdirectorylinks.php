@@ -5,7 +5,7 @@ require_once 'achpdirectorylinks.civix.php';
 /**
  * Implements hook_civicrm_buildForm().
  *
- * Set a default value for an event price set field.
+ *
  *
  */
 function achpdirectorylinks_civicrm_buildForm($formName, &$form) {
