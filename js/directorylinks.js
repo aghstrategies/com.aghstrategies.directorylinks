@@ -22,26 +22,38 @@ CRM.$(function ($) {
     $($searchPhone).html(searchPhoneSpan);
   });
 
-  // for page view emails
+  //for page listing emails
   $("[id^='row-email']").each(function () {
-    var $pageEmail = $(this).find('.content');
-    var $pageEmailLink = $('<a/>', {
-      href: 'mailto:' + $($pageEmail).html(),
+    var listingEmail = ($(this).find('.content'));
+    var $listingEmailLink = $('<a/>', {
+      href: 'mailto:' + $(listingEmail).text(),
       target: '_blank',
-      text: $($pageEmail).html(),
+      text: $(listingEmail).text(),
     });
-    $($pageEmail).html($pageEmailLink);
+    $(listingEmail).html($listingEmailLink);
   });
 
+  // // for page view emails
+  // $("[id^='row-email']").each(function () {
+  //   var $pageEmail = $(this).find('.content');
+  //   var $pageEmailHtml = $(this).find('.content').html();
+  //   var $pageEmailLink = $('<a/>', {
+  //     href: 'mailto:' + $($pageEmail).html(),
+  //     target: '_blank',
+  //     text: $($pageEmail).html(),
+  //   });
+  //   $($pageEmail).html($pageEmailLink);
+  // });
+
   // for page view phone numbers
-  $('.crm-profile-view').addClass('vcard');
-  $("[id^='row-phone']").each(function () {
-    var pagePhone = $(this).find('.content');
-    var pagePhoneLink = $('<span/>', {
-      class: 'tel',
-      text: $(pagePhone).html(),
-    });
-    $(pagePhone).html(pagePhoneLink);
-  });
+  // $('.crm-profile-view').addClass('vcard');
+  // $("[id^='row-phone']").each(function () {
+  //   var pagePhone = $(this).find('.content');
+  //   var pagePhoneLink = $('<span/>', {
+  //     class: 'tel',
+  //     text: $(pagePhone).html(),
+  //   });
+  //   $(pagePhone).html(pagePhoneLink);
+  // });
 
 });

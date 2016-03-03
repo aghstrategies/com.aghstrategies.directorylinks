@@ -7,10 +7,10 @@ Test Set Up:
 
 Scenario: Viewing on a desktop
   Given A user is viewing a search page or a view page for a profile set up as described above.
-  When a contact has an <email1> is clicked a mail window will pop up and when inspected the email will be <a href='mailto:<email1>'><email1></a>.
-  When a contact has an <email2> is clicked a mail window will pop up and when inspected the email will be <a href='mailto:<email2>'><email2></a>.
-  And if a contact has a <phone1> when inspected it will be with in a div with class vcard and have the span <span class='tel'></span>, it will not appear as a link
-  And if a contact has a <phone2> when inspected it will be with in a div with class vcard and have the span <span class='tel'></span>, it will not appear as a link
+    When a contact has an <email1> is clicked a mail window will pop up and when inspected the email will be <a href='mailto:<email1>'><email1></a>.
+    When a contact has an <email2> is clicked a mail window will pop up and when inspected the email will be <a href='mailto:<email2>'><email2></a>.
+    And if a contact has a <phone1> when inspected it will be with in a div with class vcard and have the span <span class='tel'></span>, it will not appear as a link
+    And if a contact has a <phone2> when inspected it will be with in a div with class vcard and have the span <span class='tel'></span>, it will not appear as a link
 
 Scenario: Viewing on a iphone or andrioid phone
   Given A user is viewing a search page or a view page for a profile set up as described above.
