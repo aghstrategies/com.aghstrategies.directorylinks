@@ -11,7 +11,8 @@ CRM.$(function ($) {
   });
 
   //for search view phone numbers
-  $('tr').addClass('vcard');
+  $("[id^='row']").addClass('vcard');
+
   $("[class^='crm-phone']").each(function () {
     var $searchPhone = $(this);
     var searchPhoneSpan = $('<span/>', {
