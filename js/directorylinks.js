@@ -11,7 +11,9 @@ CRM.$(function ($) {
   });
 
   // for page view
-  $('#row-email_Primary').find('.content').wrapInner("<a href='mailto:" + $('#row-email_Primary').find('.content').html() + "' target='_blank'></a>");
+  var primaryEmail = $('#row-email_Primary').find('.content');
+  var primaryPhone = $('#row-phone_Primary_1').find('.content');
 
-  $('#row-phone_Primary_1').find('.content').wrapInner("<a href='tel:" + $('#row-phone_Primary_1').find('.content').html() + "'></a>");
+  $(primaryEmail).wrapInner("<a href='mailto:" + $(primaryEmail).html() + "' target='_blank'></a>");
+  $(primaryPhone).wrapInner("<a href='tel:" + $(primaryPhone).html() + "'></a>");
 });
