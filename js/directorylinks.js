@@ -7,7 +7,7 @@ CRM.$(function ($) {
   });
 
   $('.crm-phone').each(function () {
-    $(this).wrapInner("<a href='tel://" + $(this).text() + "'></a>");
+    $(this).wrapInner("<a href='tel:" + $(this).text() + "'></a>");
   });
 
   // for page view
