@@ -1,5 +1,5 @@
 CRM.$(function ($) {
-  //for search view email
+  //for search view emails
   $("[class^='crm-email']").each(function () {
     var $searchEmail = $(this);
     var searchEmailLink = $('<a/>', {
@@ -10,7 +10,7 @@ CRM.$(function ($) {
     $($searchEmail).html(searchEmailLink);
   });
 
-  //for search view phone
+  //for search view phone numbers
   $('tr').addClass('vcard');
   $("[class^='crm-phone']").each(function () {
     var $searchPhone = $(this);
@@ -21,7 +21,7 @@ CRM.$(function ($) {
     $($searchPhone).html(searchPhoneSpan);
   });
 
-  // for page view email with each
+  // for page view emails
   $("[id^='row-email']").each(function () {
     var $pageEmail = $(this).find('.content');
     var $pageEmailLink = $('<a/>', {

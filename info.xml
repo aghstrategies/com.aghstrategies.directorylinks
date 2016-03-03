@@ -2,7 +2,7 @@
 <extension key="com.aghstrategies.achpdirectorylinks" type="module">
   <file>achpdirectorylinks</file>
   <name>ACHP Directory Links</name>
-  <description>Javascript to make email and phone clickable in directory</description>
+  <description>Javascript to make email addresses and phone numbers clickable in directories and on view pages</description>
   <license>AGPL-3.0</license>
   <maintainer>
     <author>Alice Frumin</author>
