@@ -23,25 +23,24 @@ CRM.$(function ($) {
 
   // for page view email with each
   $("[id^='row-email']").each(function () {
-    var $primaryEmail = $(this).find('.content').html();
     var $pageEmail = $(this).find('.content');
-    var $emailLink = $('<a/>', {
-      href: 'mailto:' + $primaryEmail,
+    var $pageEmailLink = $('<a/>', {
+      href: 'mailto:' + $($pageEmail).html(),
       target: '_blank',
-      text: $primaryEmail,
+      text: $($pageEmail).html(),
     });
-    $($pageEmail).html($emailLink);
+    $($pageEmail).html($pageEmailLink);
   });
 
-  // for page view phone with each
+  // for page view phone numbers
   $('.crm-profile-view').addClass('vcard');
   $("[id^='row-phone']").each(function () {
-    var phone = $(this).find('.content');
-    var phoneLink = $('<span/>', {
+    var pagePhone = $(this).find('.content');
+    var pagePhoneLink = $('<span/>', {
       class: 'tel',
-      text: $(phone).html(),
+      text: $(pagePhone).html(),
     });
-    $(phone).html(phoneLink);
+    $(pagePhone).html(pagePhoneLink);
   });
 
 });
