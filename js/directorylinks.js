@@ -1,31 +1,47 @@
 CRM.$(function ($) {
-  console.log('linked');
-
-  // for search view
-  $('.crm-email').each(function () {
-    $(this).wrapInner("<a href='mailto:" + $(this).text() + "' target='_blank'></a>");
+  //for search view email
+  $("[class^='crm-email']").each(function () {
+    var $searchEmail = $(this);
+    var searchEmailLink = $('<a/>', {
+      href: 'mailto:' + $($searchEmail).html(),
+      target: '_blank',
+      text: $($searchEmail).html(),
+    });
+    $($searchEmail).html(searchEmailLink);
   });
 
+  //for search view phone
   $('tr').addClass('vcard');
-  $('.crm-phone').each(function () {
-    $(this).wrapInner("<span class='tel'></span>");
+  $("[class^='crm-phone']").each(function () {
+    var $searchPhone = $(this);
+    var searchPhoneSpan = $('<span/>', {
+      class: 'tel',
+      text: $($searchPhone).html(),
+    });
+    $($searchPhone).html(searchPhoneSpan);
   });
 
-  // for page view email
-  var primaryEmail = $('#row-email_Primary').find('.content');
-  var emailLink = $('<a/>', {
-    href: 'mailto:' + $(primaryEmail).html(),
-    target: '_blank',
-    text: $(primaryEmail).html(),
+  // for page view email with each
+  $("[id^='row-email']").each(function () {
+    var $primaryEmail = $(this).find('.content').html();
+    var $pageEmail = $(this).find('.content');
+    var $emailLink = $('<a/>', {
+      href: 'mailto:' + $primaryEmail,
+      target: '_blank',
+      text: $primaryEmail,
+    });
+    $($pageEmail).html($emailLink);
   });
-  $(primaryEmail).html(emailLink);
 
-  // for page view phone
+  // for page view phone with each
   $('.crm-profile-view').addClass('vcard');
-  var primaryPhone = $('#row-phone_Primary_1').find('.content');
-  var phoneLink = $('<span/>', {
-    class: 'tel',
-    text: $(primaryPhone).html(),
+  $("[id^='row-phone']").each(function () {
+    var phone = $(this).find('.content');
+    var phoneLink = $('<span/>', {
+      class: 'tel',
+      text: $(phone).html(),
+    });
+    $(phone).html(phoneLink);
   });
-  $(primaryPhone).html(phoneLink);
+
 });
