@@ -11,7 +11,7 @@ CRM.$(function ($) {
   });
 
   //for search view phone numbers for public pages and public pages and listings
-  $("[id^='row']").addClass('vcard');
+  $("[id^='row']").addClass('hcard');
   $("[class^='crm-phone']").each(function () {
     var $value = $(this);
     console.log($value);
@@ -46,7 +46,7 @@ CRM.$(function ($) {
 
   //for views of individual contacts
   //for phone numbers Public Pages or Public Pages and Listings
-  $('.crm-profile-view').addClass('vcard');
+  $('.crm-profile-view').addClass('hcard');
   $("[id^='row-phone']").each(function () {
     var $value = $(this).children('.content');
     if ($value.children().length) {
