@@ -22,7 +22,7 @@ CRM.$(function ($) {
     }
 
     $value.html($('<span/>', {
-      class: 'tel',
+      class: 'tel value',
       text: $.trim(valueText),
     }));
   });
@@ -56,7 +56,7 @@ CRM.$(function ($) {
     }
 
     $value.html($('<span/>', {
-      class: 'tel',
+      class: 'tel value',
       text: $.trim(valueText),
     }));
   });
