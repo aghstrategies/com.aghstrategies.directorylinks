@@ -1,5 +1,5 @@
 CRM.$(function ($) {
-  //for search view emails
+  //for search view emails (all)
   $("[class^='crm-email']").each(function () {
     var $searchEmail = $(this);
     var searchEmailLink = $('<a/>', {
@@ -10,18 +10,25 @@ CRM.$(function ($) {
     $($searchEmail).html(searchEmailLink);
   });
 
-  //for search view phone numbers
+  //for search view phone numbers for public pages and public pages and listings
   $("[id^='row']").addClass('vcard');
   $("[class^='crm-phone']").each(function () {
-    var $searchPhone = $(this);
-    var searchPhoneSpan = $('<span/>', {
+    var $value = $(this);
+    console.log($value);
+    if ($value.children().length) {
+      var valueText = $value.children().html();
+    } else {
+      var valueText = $value.html();
+    }
+
+    $value.html($('<span/>', {
       class: 'tel',
-      text: $($searchPhone).html(),
-    });
-    $($searchPhone).html(searchPhoneSpan);
+      text: $.trim(valueText),
+    }));
   });
 
-  //for page listing emails
+  //for views of individual contacts
+  //for emails PuBlic Pages or Public Pages and Listings
   $("[id^='row-email']").each(function () {
     var $value = $(this).children('.content');
     if ($value.children().length) {
@@ -37,25 +44,20 @@ CRM.$(function ($) {
     }));
   });
 
-  //for page view phone numbers
+  //for views of individual contacts
+  //for phone numbers Public Pages or Public Pages and Listings
   $('.crm-profile-view').addClass('vcard');
   $("[id^='row-phone']").each(function () {
-    var pagePhoneHtml = $(this).find('.content').html();
-    var phoneDiv = $(this).find('.content');
-    if ($(pagePhoneHtml).is('a')) {
-      var pageListingPhone = $(this).find('.content').text();
-      var $pagePhoneListingLink = $('<span/>', {
-        class: 'tel',
-        text: pageListingPhone,
-      });
-      $(phoneDiv).html($pagePhoneListingLink);
+    var $value = $(this).children('.content');
+    if ($value.children().length) {
+      var valueText = $value.children().html();
     } else {
-      var pagePhone = $(this).find('.content');
-      var pagePhoneLink = $('<span/>', {
-        class: 'tel',
-        text: $(pagePhone).html(),
-      });
-      $(pagePhone).html(pagePhoneLink);
+      var valueText = $value.html();
     }
+
+    $value.html($('<span/>', {
+      class: 'tel',
+      text: $.trim(valueText),
+    }));
   });
 });
