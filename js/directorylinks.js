@@ -11,22 +11,23 @@ CRM.$(function ($) {
   });
 
   //for search view phone numbers for public pages and public pages and listings
-  $("[id^='row']").addClass('hcard vcard');
-  $("[class^='crm-phone']").each(function () {
-    var $value = $(this);
-    console.log($value);
-    if ($value.children().length) {
-      var valueText = $value.children().html();
-    } else {
-      var valueText = $value.html();
-    }
+  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    $("[class^='crm-phone']").each(function () {
+      var $value = $(this);
+      console.log($value);
+      if ($value.children().length) {
+        var valueText = $value.children().html();
+      } else {
+        var valueText = $value.html();
+      }
 
-    $value.html($('<a/>', {
-      class: 'tel',
-      href: 'tel:' + $.trim(valueText),
-      text: $.trim(valueText),
-    }));
-  });
+      $value.html($('<a/>', {
+        class: 'tel',
+        href: 'tel:' + $.trim(valueText),
+        text: $.trim(valueText),
+      }));
+    });
+  }
 
   //for views of individual contacts
   //for emails PuBlic Pages or Public Pages and Listings
@@ -47,19 +48,20 @@ CRM.$(function ($) {
 
   //for views of individual contacts
   //for phone numbers Public Pages or Public Pages and Listings
-  $('.crm-profile-view').addClass('h-card vcard');
-  $("[id^='row-phone']").each(function () {
-    var $value = $(this).children('.content');
-    if ($value.children().length) {
-      var valueText = $value.children().html();
-    } else {
-      var valueText = $value.html();
-    }
+  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    $("[id^='row-phone']").each(function () {
+        var $value = $(this).children('.content');
+        if ($value.children().length) {
+          var valueText = $value.children().html();
+        } else {
+          var valueText = $value.html();
+        }
 
-    $($value).addClass('tel');
-    $value.html($('<span/>', {
-      class: 'value',
-      text: $.trim(valueText),
-    }));
-  });
+        $($value).addClass('tel');
+        $value.html($('<span/>', {
+          class: 'value',
+          text: $.trim(valueText),
+        }));
+      });
+  }
 });
