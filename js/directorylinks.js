@@ -12,7 +12,6 @@ CRM.$(function ($) {
 
   //for search view phone numbers
   $("[id^='row']").addClass('vcard');
-
   $("[class^='crm-phone']").each(function () {
     var $searchPhone = $(this);
     var searchPhoneSpan = $('<span/>', {
@@ -24,36 +23,39 @@ CRM.$(function ($) {
 
   //for page listing emails
   $("[id^='row-email']").each(function () {
-    var listingEmail = ($(this).find('.content'));
-    var $listingEmailLink = $('<a/>', {
-      href: 'mailto:' + $(listingEmail).text(),
+    var $value = $(this).children('.content');
+    if ($value.children().length) {
+      var valueText = $value.children().html();
+    } else {
+      var valueText = $value.html();
+    }
+
+    $value.html($('<a/>', {
+      href: 'mailto:' + $.trim(valueText),
       target: '_blank',
-      text: $(listingEmail).text(),
-    });
-    $(listingEmail).html($listingEmailLink);
+      text: $.trim(valueText),
+    }));
   });
 
-  // // for page view emails
-  // $("[id^='row-email']").each(function () {
-  //   var $pageEmail = $(this).find('.content');
-  //   var $pageEmailHtml = $(this).find('.content').html();
-  //   var $pageEmailLink = $('<a/>', {
-  //     href: 'mailto:' + $($pageEmail).html(),
-  //     target: '_blank',
-  //     text: $($pageEmail).html(),
-  //   });
-  //   $($pageEmail).html($pageEmailLink);
-  // });
-
-  // for page view phone numbers
-  // $('.crm-profile-view').addClass('vcard');
-  // $("[id^='row-phone']").each(function () {
-  //   var pagePhone = $(this).find('.content');
-  //   var pagePhoneLink = $('<span/>', {
-  //     class: 'tel',
-  //     text: $(pagePhone).html(),
-  //   });
-  //   $(pagePhone).html(pagePhoneLink);
-  // });
-
+  //for page view phone numbers
+  $('.crm-profile-view').addClass('vcard');
+  $("[id^='row-phone']").each(function () {
+    var pagePhoneHtml = $(this).find('.content').html();
+    var phoneDiv = $(this).find('.content');
+    if ($(pagePhoneHtml).is('a')) {
+      var pageListingPhone = $(this).find('.content').text();
+      var $pagePhoneListingLink = $('<span/>', {
+        class: 'tel',
+        text: pageListingPhone,
+      });
+      $(phoneDiv).html($pagePhoneListingLink);
+    } else {
+      var pagePhone = $(this).find('.content');
+      var pagePhoneLink = $('<span/>', {
+        class: 'tel',
+        text: $(pagePhone).html(),
+      });
+      $(pagePhone).html(pagePhoneLink);
+    }
+  });
 });
