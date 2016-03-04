@@ -21,8 +21,9 @@ CRM.$(function ($) {
       var valueText = $value.html();
     }
 
-    $value.html($('<span/>', {
-      class: 'value tel',
+    $value.html($('<a/>', {
+      class: 'tel',
+      href: 'tel:' + $.trim(valueText),
       text: $.trim(valueText),
     }));
   });
