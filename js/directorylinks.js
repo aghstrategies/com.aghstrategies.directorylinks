@@ -1,5 +1,7 @@
 CRM.$(function ($) {
-  //makes all emails (home, primary, work etc. ) mailto links on search profile page
+  //on search profile page (list of all matching results)
+  //gets all emails (home, primary, work etc. ) and makes them mailto links
+  //regardless of whether the field is set as "public pages" or "public pages and listings"
   $("[class^='crm-email']").each(function () {
     var $searchEmail = $(this);
     var searchEmailLink = $('<a/>', {
@@ -10,7 +12,9 @@ CRM.$(function ($) {
     $($searchEmail).html(searchEmailLink);
   });
 
-  //makes all emails (home, primary, work etc. ) mailto links on view profile page
+  //on view of one contact
+  //makes all emails (home, primary, work etc. ) mailto links
+  //regardless of whether the field is set as "public pages" or "public pages and listings"
   $("[id^='row-email']").each(function () {
     var $value = $(this).children('.content');
     if ($value.children().length) {
@@ -26,11 +30,19 @@ CRM.$(function ($) {
     }));
   });
 
-  //only on phones
+  //On view of one contact
+  //Unlinks all phone numbers if set to "Public Pages and Listings"
+  $("[id^='row-phone']").each(function () {
+    var $value = $(this).children('.content');
+    $($value).html($value.children().html());
+  });
+
+  //If using a mobile phone this code makes phone numbers into links
   if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
 
-    //for the search profile view of phone numberes
-    //"public pages" and "public pages and listings"
+    //All phone types (home, primary etc.)
+    //on search profile page (list of all matching results)
+    //regardless of whether the field is set as "public pages" or "public pages and listings"
     $("[class^='crm-phone']").each(function () {
       var $value = $(this);
       console.log($value);
@@ -46,8 +58,9 @@ CRM.$(function ($) {
       }));
     });
 
+    //All phone types (home, primary etc.)
     //for views of individual contacts
-    //for phone numbers Public Pages or Public Pages and Listings
+    //regardless of whether the field is set as "public pages" or "public pages and listings"
     $("[id^='row-phone']").each(function () {
       var $value = $(this).children('.content');
       if ($value.children().length) {
