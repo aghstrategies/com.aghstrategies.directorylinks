@@ -1,5 +1,5 @@
 CRM.$(function ($) {
-  //for search view emails (all)
+  //makes all emails (home, primary, work etc. ) mailto links on search profile page
   $("[class^='crm-email']").each(function () {
     var $searchEmail = $(this);
     var searchEmailLink = $('<a/>', {
@@ -10,27 +10,7 @@ CRM.$(function ($) {
     $($searchEmail).html(searchEmailLink);
   });
 
-  //for search view phone numbers for public pages and public pages and listings
-  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-    $("[class^='crm-phone']").each(function () {
-      var $value = $(this);
-      console.log($value);
-      if ($value.children().length) {
-        var valueText = $value.children().html();
-      } else {
-        var valueText = $value.html();
-      }
-
-      $value.html($('<a/>', {
-        class: 'tel',
-        href: 'tel:' + $.trim(valueText),
-        text: $.trim(valueText),
-      }));
-    });
-  }
-
-  //for views of individual contacts
-  //for emails PuBlic Pages or Public Pages and Listings
+  //makes all emails (home, primary, work etc. ) mailto links on view profile page
   $("[id^='row-email']").each(function () {
     var $value = $(this).children('.content');
     if ($value.children().length) {
@@ -46,22 +26,40 @@ CRM.$(function ($) {
     }));
   });
 
-  //for views of individual contacts
-  //for phone numbers Public Pages or Public Pages and Listings
+  //only on phones
   if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-    $("[id^='row-phone']").each(function () {
-        var $value = $(this).children('.content');
-        if ($value.children().length) {
-          var valueText = $value.children().html();
-        } else {
-          var valueText = $value.html();
-        }
 
-        $($value).addClass('tel');
-        $value.html($('<span/>', {
-          class: 'value',
-          text: $.trim(valueText),
-        }));
-      });
+    //for the search profile view of phone numberes
+    //"public pages" and "public pages and listings"
+    $("[class^='crm-phone']").each(function () {
+      var $value = $(this);
+      console.log($value);
+      if ($value.children().length) {
+        var valueText = $value.children().html();
+      } else {
+        var valueText = $value.html();
+      }
+
+      $value.html($('<a/>', {
+        href: 'tel:' + $.trim(valueText),
+        text: $.trim(valueText),
+      }));
+    });
+
+    //for views of individual contacts
+    //for phone numbers Public Pages or Public Pages and Listings
+    $("[id^='row-phone']").each(function () {
+      var $value = $(this).children('.content');
+      if ($value.children().length) {
+        var valueText = $value.children().html();
+      } else {
+        var valueText = $value.html();
+      }
+
+      $value.html($('<a/>', {
+        href: 'tel:' + $.trim(valueText),
+        text: $.trim(valueText),
+      }));
+    });
   }
 });
