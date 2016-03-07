@@ -1,4 +1,5 @@
 @media (min-width: 200px) and (max-width: 870px) {
+  /*search results as boxes instead of rows on phone*/
   .crm-search-results th {
     display: none;
   }
@@ -25,8 +26,18 @@
   .crm-container tr.even-row td, .crm-container tr.odd-row td, .crm-container table.display td, .crm-container table.pagerDisplay td {
     border: none;
   }
-
+/*TStyling for page navigation on phone*/
   .crm-container .crm-pager {
     height: auto;
+  }
+  #crm-container .crm-pager .element-right {
+    float: none;
+  }
+  .crm-container a.action-item {
+    display: block;
+  }
+
+  .crm-pager-nav {
+    line-height: 100%;
   }
 }
