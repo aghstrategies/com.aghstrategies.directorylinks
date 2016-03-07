@@ -14,6 +14,7 @@ function achpdirectorylinks_civicrm_buildForm($formName, &$form) {
 
   if ($formName == 'CRM_Profile_Form_Search') {
     CRM_Core_Resources::singleton()->addScriptFile('com.aghstrategies.achpdirectorylinks', 'js/directorylinks.js');
+    CRM_Core_Resources::singleton()->addStyleFile('com.aghstrategies.achpdirectorylinks', 'css/directoryViews.css');
   }
 }
 

@@ -1,0 +1,14 @@
+@media (min-width: 200px) and (max-width: 870px) {
+  tr {
+    display: block;
+    border: 1px black solid;
+    padding: 1em;
+    width: 90%;
+  }
+  td {
+    display: block;
+  }
+  .crm-icon {
+    display: none;
+  }
+}
