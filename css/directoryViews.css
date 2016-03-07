@@ -12,6 +12,8 @@
     display: block;
     border: none;
     font-size: 15px;
+    padding: 0px;
+    margin: 0px;
   }
   .crm-search-results .crm-icon {
     display: none;
