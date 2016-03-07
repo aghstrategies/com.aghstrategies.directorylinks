@@ -10,8 +10,21 @@
   }
   .crm-search-results td {
     display: block;
+    border: none;
+    font-size: 15px;
   }
   .crm-search-results .crm-icon {
     display: none;
+  }
+  .crm-search-results .crm-sort_name {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .crm-container tr.even-row td, .crm-container tr.odd-row td, .crm-container table.display td, .crm-container table.pagerDisplay td {
+    border: none;
+  }
+
+  .crm-container .crm-pager {
+    height: auto;
   }
 }
