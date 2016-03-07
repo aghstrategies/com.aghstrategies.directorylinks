@@ -1,14 +1,17 @@
 @media (min-width: 200px) and (max-width: 870px) {
-  tr {
+  .crm-search-results th {
+    display: none;
+  }
+  .crm-search-results tr {
     display: block;
     border: 1px black solid;
     padding: 1em;
-    width: 90%;
+    width: 100%;
   }
-  td {
+  .crm-search-results td {
     display: block;
   }
-  .crm-icon {
+  .crm-search-results .crm-icon {
     display: none;
   }
 }
