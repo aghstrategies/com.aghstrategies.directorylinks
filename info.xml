@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <extension key="com.aghstrategies.directorylinks" type="module">
   <file>directorylinks</file>
-  <name>ACHP Directory Links</name>
+  <name>Directory Links</name>
   <description>Javascript to make email addresses and phone numbers clickable in directories and on view pages</description>
   <license>AGPL-3.0</license>
   <maintainer>
