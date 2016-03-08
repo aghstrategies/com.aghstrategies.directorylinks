@@ -1,6 +1,6 @@
 
 
-Feature: This extension makes emails mailto links and phone numbers microformatted to be clickable on phones on the profile listing view and page view
+Feature: This extension makes emails mailto links and phone numbers tel links only when viewing on a phone.
 
 Test Set Up:
  Create a profile, be sure that in profile settings Used for field the "Standalone Form or Directory" box is checked as is the "Is this CiviCRM Profile active?" box. Additionally in profile fields be sure that there is more than one email (work and home) and phone number (work and home).
