@@ -1,6 +1,6 @@
 <?php
 
-require_once 'achpdirectorylinks.civix.php';
+require_once 'directorylinks.civix.php';
 
 /**
  * Implements hook_civicrm_buildForm().
@@ -8,18 +8,18 @@ require_once 'achpdirectorylinks.civix.php';
  *
  *
  */
-function achpdirectorylinks_civicrm_buildForm($formName, &$form) {
+function directorylinks_civicrm_buildForm($formName, &$form) {
   //print ($formName);
   //die();
 
   if ($formName == 'CRM_Profile_Form_Search') {
-    CRM_Core_Resources::singleton()->addScriptFile('com.aghstrategies.achpdirectorylinks', 'js/directorylinks.js');
-    CRM_Core_Resources::singleton()->addStyleFile('com.aghstrategies.achpdirectorylinks', 'css/directoryViews.css');
+    CRM_Core_Resources::singleton()->addScriptFile('com.aghstrategies.directorylinks', 'js/directorylinks.js');
+    CRM_Core_Resources::singleton()->addStyleFile('com.aghstrategies.directorylinks', 'css/directoryViews.css');
   }
 }
 
-function achpdirectorylinks_civicrm_pageRun(&$page) {
-  CRM_Core_Resources::singleton()->addScriptFile('com.aghstrategies.achpdirectorylinks', 'js/directorylinks.js');
+function directorylinks_civicrm_pageRun(&$page) {
+  CRM_Core_Resources::singleton()->addScriptFile('com.aghstrategies.directorylinks', 'js/directorylinks.js');
 }
 
 /**
@@ -27,8 +27,8 @@ function achpdirectorylinks_civicrm_pageRun(&$page) {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_config
  */
-function achpdirectorylinks_civicrm_config(&$config) {
-  _achpdirectorylinks_civix_civicrm_config($config);
+function directorylinks_civicrm_config(&$config) {
+  _directorylinks_civix_civicrm_config($config);
 }
 
 /**
@@ -38,8 +38,8 @@ function achpdirectorylinks_civicrm_config(&$config) {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_xmlMenu
  */
-function achpdirectorylinks_civicrm_xmlMenu(&$files) {
-  _achpdirectorylinks_civix_civicrm_xmlMenu($files);
+function directorylinks_civicrm_xmlMenu(&$files) {
+  _directorylinks_civix_civicrm_xmlMenu($files);
 }
 
 /**
@@ -47,8 +47,8 @@ function achpdirectorylinks_civicrm_xmlMenu(&$files) {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_install
  */
-function achpdirectorylinks_civicrm_install() {
-  _achpdirectorylinks_civix_civicrm_install();
+function directorylinks_civicrm_install() {
+  _directorylinks_civix_civicrm_install();
 }
 
 /**
@@ -56,8 +56,8 @@ function achpdirectorylinks_civicrm_install() {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_uninstall
  */
-function achpdirectorylinks_civicrm_uninstall() {
-  _achpdirectorylinks_civix_civicrm_uninstall();
+function directorylinks_civicrm_uninstall() {
+  _directorylinks_civix_civicrm_uninstall();
 }
 
 /**
@@ -65,8 +65,8 @@ function achpdirectorylinks_civicrm_uninstall() {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_enable
  */
-function achpdirectorylinks_civicrm_enable() {
-  _achpdirectorylinks_civix_civicrm_enable();
+function directorylinks_civicrm_enable() {
+  _directorylinks_civix_civicrm_enable();
 }
 
 /**
@@ -74,8 +74,8 @@ function achpdirectorylinks_civicrm_enable() {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_disable
  */
-function achpdirectorylinks_civicrm_disable() {
-  _achpdirectorylinks_civix_civicrm_disable();
+function directorylinks_civicrm_disable() {
+  _directorylinks_civix_civicrm_disable();
 }
 
 /**
@@ -90,8 +90,8 @@ function achpdirectorylinks_civicrm_disable() {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_upgrade
  */
-function achpdirectorylinks_civicrm_upgrade($op, CRM_Queue_Queue $queue = NULL) {
-  return _achpdirectorylinks_civix_civicrm_upgrade($op, $queue);
+function directorylinks_civicrm_upgrade($op, CRM_Queue_Queue $queue = NULL) {
+  return _directorylinks_civix_civicrm_upgrade($op, $queue);
 }
 
 /**
@@ -102,8 +102,8 @@ function achpdirectorylinks_civicrm_upgrade($op, CRM_Queue_Queue $queue = NULL) 
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_managed
  */
-function achpdirectorylinks_civicrm_managed(&$entities) {
-  _achpdirectorylinks_civix_civicrm_managed($entities);
+function directorylinks_civicrm_managed(&$entities) {
+  _directorylinks_civix_civicrm_managed($entities);
 }
 
 /**
@@ -117,8 +117,8 @@ function achpdirectorylinks_civicrm_managed(&$entities) {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_caseTypes
  */
-function achpdirectorylinks_civicrm_caseTypes(&$caseTypes) {
-  _achpdirectorylinks_civix_civicrm_caseTypes($caseTypes);
+function directorylinks_civicrm_caseTypes(&$caseTypes) {
+  _directorylinks_civix_civicrm_caseTypes($caseTypes);
 }
 
 /**
@@ -131,8 +131,8 @@ function achpdirectorylinks_civicrm_caseTypes(&$caseTypes) {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_caseTypes
  */
-function achpdirectorylinks_civicrm_angularModules(&$angularModules) {
-_achpdirectorylinks_civix_civicrm_angularModules($angularModules);
+function directorylinks_civicrm_angularModules(&$angularModules) {
+_directorylinks_civix_civicrm_angularModules($angularModules);
 }
 
 /**
@@ -140,8 +140,8 @@ _achpdirectorylinks_civix_civicrm_angularModules($angularModules);
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_alterSettingsFolders
  */
-function achpdirectorylinks_civicrm_alterSettingsFolders(&$metaDataFolders = NULL) {
-  _achpdirectorylinks_civix_civicrm_alterSettingsFolders($metaDataFolders);
+function directorylinks_civicrm_alterSettingsFolders(&$metaDataFolders = NULL) {
+  _directorylinks_civix_civicrm_alterSettingsFolders($metaDataFolders);
 }
 
 /**
@@ -153,7 +153,7 @@ function achpdirectorylinks_civicrm_alterSettingsFolders(&$metaDataFolders = NUL
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_preProcess
  *
-function achpdirectorylinks_civicrm_preProcess($formName, &$form) {
+function directorylinks_civicrm_preProcess($formName, &$form) {
 
 } // */
 
@@ -162,14 +162,14 @@ function achpdirectorylinks_civicrm_preProcess($formName, &$form) {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_navigationMenu
  *
-function achpdirectorylinks_civicrm_navigationMenu(&$menu) {
-  _achpdirectorylinks_civix_insert_navigation_menu($menu, NULL, array(
-    'label' => ts('The Page', array('domain' => 'com.aghstrategies.achpdirectorylinks')),
+function directorylinks_civicrm_navigationMenu(&$menu) {
+  _directorylinks_civix_insert_navigation_menu($menu, NULL, array(
+    'label' => ts('The Page', array('domain' => 'com.aghstrategies.directorylinks')),
     'name' => 'the_page',
     'url' => 'civicrm/the-page',
     'permission' => 'access CiviReport,access CiviContribute',
     'operator' => 'OR',
     'separator' => 0,
   ));
-  _achpdirectorylinks_civix_navigationMenu($menu);
+  _directorylinks_civix_navigationMenu($menu);
 } // */

@@ -1,4 +1,4 @@
-CRM.$(function ($) {
+ CRM.$(function ($) {
   //on search profile page (list of all matching results)
   //gets all emails (home, primary, work etc. ) and makes them mailto links
   //regardless of whether the field is set as "public pages" or "public pages and listings"

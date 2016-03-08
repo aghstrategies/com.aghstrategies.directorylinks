@@ -1,4 +1,4 @@
-Package: com.aghstrategies.achpdirectorylinks
+Package: com.aghstrategies.directorylinks
 Copyright (C) 2016, Alice Frumin <alice@aghstrategies.com>
 Licensed under the GNU Affero Public License 3.0 (below).
 
