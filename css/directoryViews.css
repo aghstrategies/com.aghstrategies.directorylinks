@@ -33,11 +33,12 @@
   #crm-container .crm-pager .element-right {
     float: none;
   }
-  /*.crm-container a.action-item {
-    display: block;
-  }*/
 
   .crm-pager-nav {
     line-height: 100%;
+  }
+
+  #crm-container.crm-public input[type="text"] {
+    padding: 10px;
   }
 }
