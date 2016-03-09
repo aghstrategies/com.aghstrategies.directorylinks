@@ -7,7 +7,7 @@
     display: block;
     border: 1px black solid;
     padding: 1em;
-    width: 100%;
+    width: auto;
   }
   .crm-search-results td {
     display: block;
@@ -33,9 +33,9 @@
   #crm-container .crm-pager .element-right {
     float: none;
   }
-  .crm-container a.action-item {
+  /*.crm-container a.action-item {
     display: block;
-  }
+  }*/
 
   .crm-pager-nav {
     line-height: 100%;
