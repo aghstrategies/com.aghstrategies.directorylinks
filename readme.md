@@ -1,4 +1,4 @@
-This extension makes emails clickable always and phone numbers clickable when viewing from a phone on the search profile view and view of an individual profile, see more details below:
+When viewing profile listings (profile search results) or a profile view (one profile) this extension makes emails clickable always and phone numbers clickable only when viewing on a phone.
 
 When using a profile:
 ---------------------

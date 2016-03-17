@@ -1,4 +1,13 @@
 <?php
+/**
+ * @file
+ * Profile Directory Links
+ *
+ * A CiviCRM extension that makes emails clickable always and phone numbers clickable only when viewing on a phone when viewing a phone
+ *
+ * Copyright (C) 2016, AGH Strategies, LLC <info@aghstrategies.com>
+ * Licensed under the GNU Affero Public License 3.0 (see LICENSE.txt)
+ */
 
 require_once 'directorylinks.civix.php';
 
