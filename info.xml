@@ -13,7 +13,7 @@
     <url desc="documentation">https://civicrm.org/extensions/profile-directory-links</url>
   </urls>
   <releaseDate>2016-03-02</releaseDate>
-  <version>v1.1</version>
+  <version>1.1</version>
   <develStage>stable</develStage>
   <compatibility>
     <ver>4.6</ver>
